@@ -111,7 +111,7 @@ namespace Milosevic_AsyncSocketLib
                         break;
                     }
                     string recvText = new string(buff);
-                    Debug.WriteLine("N° byte: {0}. Messaggio: {1}", nBytes, recvText);
+                    InviaTutti(recvText);
                 }
             }
             catch (Exception ex)
