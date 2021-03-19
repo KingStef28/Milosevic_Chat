@@ -156,7 +156,6 @@ namespace Milosevic_AsyncSocketLib
                     RimuoviClient(client.Client);
                 }
                 mServer.Stop();
-                mServer = null;
             }
             catch (Exception ex)
             {
