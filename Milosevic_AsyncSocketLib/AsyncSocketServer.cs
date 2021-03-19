@@ -100,14 +100,14 @@ namespace Milosevic_AsyncSocketLib
 
                 while (true)
                 {
-                    Debug.WriteLine("In attesa di un messaggio");
+                    Console.WriteLine("In attesa di un messaggio");
                     //ricezione messaggio asincrono
                     nBytes = await reader.ReadAsync(buff, 0, buff.Length);
 
                     if (nBytes == 0)
                     {
                         RimuoviClient(client);
-                        Debug.WriteLine("Client Disconnesso");
+                        Console.WriteLine("Client Disconnesso");
                         break;
                     }
                     string recvText = new string(buff);
@@ -116,7 +116,7 @@ namespace Milosevic_AsyncSocketLib
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Errore: " + ex.Message);
+                Console.WriteLine("Errore: " + ex.Message);
             }
         }
 
@@ -142,7 +142,7 @@ namespace Milosevic_AsyncSocketLib
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Errore: " + ex.Message);
+                Console.WriteLine("Errore: " + ex.Message);
             }
         }
 
@@ -159,7 +159,7 @@ namespace Milosevic_AsyncSocketLib
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Errore: " + ex.Message);
+                Console.WriteLine("Errore: " + ex.Message);
             }
         }
     }
