@@ -52,7 +52,7 @@ namespace Milosevic_AsyncSocketLib
             {
                 TcpClient client = await mServer.AcceptTcpClientAsync();
                 RegistraClient(client);
-                Console.WriteLine("Client connessi: {0}. Client connesso: {1}", mClients.Count, client.Client.RemoteEndPoint);
+                //Console.WriteLine("Client connessi: {0}. Client connesso: {1}", mClients.Count, client.Client.RemoteEndPoint);
                 RiceviMessaggio(client);
             }
         }
@@ -106,6 +106,7 @@ namespace Milosevic_AsyncSocketLib
 
                     if (nBytes == 0)
                     {
+                        RimuoviClient(client);
                         Debug.WriteLine("Client Disconnesso");
                         break;
                     }
@@ -121,9 +122,11 @@ namespace Milosevic_AsyncSocketLib
 
         private void RimuoviClient(TcpClient client)
         {
-            if (mClients.Contains(client))
+            ClientChat nm = mClients.Where(riga => riga.Client == client).FirstOrDefault();
+
+            if (nm != null)
             {
-                mClients.Remove(client);
+                mClients.Remove(nm);
             }
         }
 
