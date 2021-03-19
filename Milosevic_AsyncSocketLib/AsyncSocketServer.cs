@@ -134,10 +134,10 @@ namespace Milosevic_AsyncSocketLib
         {
             try
             {
-                foreach (TcpClient client in mClients)
+                foreach (ClientChat client in mClients)
                 {
                     byte[] buff = Encoding.ASCII.GetBytes(messaggio);
-                    client.GetStream().WriteAsync(buff, 0, buff.Length);
+                    client.Client.GetStream().WriteAsync(buff, 0, buff.Length);
                 }
             }
             catch (Exception ex)
@@ -150,10 +150,10 @@ namespace Milosevic_AsyncSocketLib
         {
             try
             {
-                foreach (TcpClient client in mClients)
+                foreach (ClientChat client in mClients)
                 {
-                    client.Close();
-                    RimuoviClient(client);
+                    client.Client.Close();
+                    RimuoviClient(client.Client);
                 }
                 mServer.Stop();
                 mServer = null;
