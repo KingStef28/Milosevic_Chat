@@ -31,7 +31,7 @@ namespace Milosevic_Chat_Client
 
         private void btn_disconnetti_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }
