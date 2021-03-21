@@ -41,11 +41,7 @@ namespace Milosevic_AsyncSocketLib
             mPort = port;
 
             mServer = new TcpListener(mIP, mPort);
-
-            Console.WriteLine("Server in ascolto su IP: {0} - Porta: {1}", mIP.ToString(), mPort.ToString());
-
             mServer.Start();
-
             Console.WriteLine("Server avviato.");
 
             while (true)
