@@ -21,7 +21,7 @@ namespace Milosevic_Chat_Client
     /// </summary>
     public partial class MainWindow : Window
     {
-        public AsyncSocketClient client;
+        public AsyncSocketClient client = new AsyncSocketClient();
 
         public MainWindow()
         {
