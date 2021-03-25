@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Milosevic_AsyncSocketLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace Milosevic_Chat_Client
     /// </summary>
     public partial class MainWindow : Window
     {
+        public AsyncSocketClient client;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +33,10 @@ namespace Milosevic_Chat_Client
 
         private void btn_open_Click(object sender, RoutedEventArgs e)
         {
+            client.SetServerIPAddress(txt_ipaddr.Text);
+            client.SetServerPort(txt_port.Text);
+            client.ConnettiAlServer();
+
             Chat win = new Chat();
             win.Show();
             this.Hide();

@@ -68,8 +68,7 @@ namespace Milosevic_AsyncSocketLib
             try
             {
                 await mClient.ConnectAsync(mServerIpAddress, mServerPort);
-                Console.WriteLine("Connesso al server IP/Port: {0} / {1}",
-                                    mServerIpAddress.ToString(), mServerPort);
+                Console.WriteLine("Connesso al server IP/Port: {0} / {1}", mServerIpAddress.ToString(), mServerPort);
                 RiceviMessaggi();
             }
             catch (Exception ex)
