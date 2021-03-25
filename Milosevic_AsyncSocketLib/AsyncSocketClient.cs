@@ -125,7 +125,6 @@ namespace Milosevic_AsyncSocketLib
             }
             catch (Exception ex)
             {
-
                 Console.WriteLine(ex.Message);
             }
         }
@@ -136,7 +135,5 @@ namespace Milosevic_AsyncSocketLib
             mServerPort = -1;
             mClient = null;
         }
-
-
     }
 }
