@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Milosevic_Chat_Client"
         mc:Ignorable="d"
-        Title="Chat" Height="450" Width="575">
+        Title="Chat" Height="450" Width="575" Closed="Window_Closed">
     <Grid>
         <ListBox x:Name="lst_chat" HorizontalAlignment="Left" Height="305" Margin="10,65,0,0" VerticalAlignment="Top" Width="545"/>
         <TextBox x:Name="txt_messaggio" HorizontalAlignment="Left" Height="30" Margin="10,380,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="380" FontSize="14"/>
