@@ -36,11 +36,11 @@ namespace Milosevic_Chat_Client
             client.SetServerIPAddress(txt_ipaddr.Text);
             client.SetServerPort(txt_port.Text);
             client.ConnettiAlServer();
-
             client.Invia(txt_user.Text);
 
             Chat win = new Chat();
             win.Show();
+
             this.Hide();
         }
     }
