@@ -107,7 +107,10 @@ namespace Milosevic_AsyncSocketLib
                         break;
                     }
                     string recvMessage = new string(buff, 0, nBytes);
-                    Console.WriteLine(recvMessage);
+                    Messaggi.Add(recvMessage);
+
+                    EventArgs e = new EventArgs();
+                    OnNewMessageHandler(e);
                 }
             }
             catch (Exception ex)
