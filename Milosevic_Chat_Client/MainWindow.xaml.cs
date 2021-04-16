@@ -38,7 +38,7 @@ namespace Milosevic_Chat_Client
             client.ConnettiAlServer();
             client.Invia(txt_user.Text);
 
-            Chat win = new Chat();
+            Chat win = new Chat(client);
             win.Show();
 
             this.Hide();
