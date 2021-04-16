@@ -25,11 +25,17 @@ namespace Milosevic_Chat_Client
         {
             InitializeComponent();
             Client = client;
+            Client.OnNewMessage += Client_OnNewMessage;
+        }
+
+        private void Client_OnNewMessage(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void btn_invia_Click(object sender, RoutedEventArgs e)
         {
-
+            Client.Invia(txt_messaggio.Text);
         }
 
         private void btn_disconnetti_Click(object sender, RoutedEventArgs e)
