@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Milosevic_AsyncSocketLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,11 @@ namespace Milosevic_Chat_Client
     /// </summary>
     public partial class Chat : Window
     {
-        public Chat()
+        AsyncSocketClient Client;
+        public Chat(AsyncSocketClient client)
         {
             InitializeComponent();
+            Client = client;
         }
 
         private void btn_invia_Click(object sender, RoutedEventArgs e)
