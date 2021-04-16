@@ -30,7 +30,7 @@ namespace Milosevic_Chat_Client
 
         private void Client_OnNewMessage(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+
         }
 
         private void btn_invia_Click(object sender, RoutedEventArgs e)
