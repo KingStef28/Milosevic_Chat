@@ -69,7 +69,7 @@ namespace Milosevic_AsyncSocketLib
                 //ricezione del nickname
                 nBytes = await reader.ReadAsync(buff, 0, buff.Length);
                 string recvText = new string(buff);
-                Console.WriteLine("N° byte: {0}. Nickname: {1}", nBytes, recvText);
+                Console.WriteLine("Nickname: {0}", recvText);
                 ClientChat newclient = new ClientChat();
                 newclient.Nickname = recvText;
                 newclient.Client = client;
