@@ -30,7 +30,8 @@ namespace Milosevic_Chat_Client
 
         private void Client_OnNewMessage(object sender, EventArgs e)
         {
-
+            lst_chat.ItemsSource = Client.Messaggi;
+            lst_chat.Items.Refresh();
         }
 
         private void btn_invia_Click(object sender, RoutedEventArgs e)
