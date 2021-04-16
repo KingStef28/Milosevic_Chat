@@ -43,5 +43,10 @@ namespace Milosevic_Chat_Client
         {
 
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            App.Current.Shutdown();
+        }
     }
 }
