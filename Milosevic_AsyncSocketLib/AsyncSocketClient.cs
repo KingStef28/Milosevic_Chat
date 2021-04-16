@@ -15,6 +15,15 @@ namespace Milosevic_AsyncSocketLib
         int mServerPort;
         TcpClient mClient;
 
+        public List<string> Messaggi = new List<string>();
+        public event EventHandler OnNewMessage;
+
+        protected virtual void OnNewMessageHandler(EventArgs e)
+        {
+            EventHandler handler = OnNewMessage;
+            handler?.Invoke(this, e);
+        }
+
         public IPAddress ServerIpAddress
         {
             get
