@@ -37,6 +37,7 @@ namespace Milosevic_Chat_Client
         private void btn_invia_Click(object sender, RoutedEventArgs e)
         {
             Client.Invia(txt_messaggio.Text);
+            txt_messaggio.Clear();
         }
 
         private void btn_disconnetti_Click(object sender, RoutedEventArgs e)
