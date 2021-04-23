@@ -68,7 +68,7 @@ namespace Milosevic_AsyncSocketLib
                 Console.WriteLine("In attesa di Nickname...");
                 //ricezione del nickname
                 nBytes = await reader.ReadAsync(buff, 0, buff.Length);
-                string recvText = new string(buff);
+                string recvText = new string(buff, 0, nBytes);
                 Console.WriteLine("Nickname: {0}", recvText);
                 ClientChat newclient = new ClientChat();
                 newclient.Nickname = recvText;
@@ -106,12 +106,17 @@ namespace Milosevic_AsyncSocketLib
                         Console.WriteLine("Client Disconnesso");
                         break;
                     }
-                    string recvText = new string(buff);
-                    InviaTutti(recvText);
+                    string recvText = new string(buff, 0, nBytes);
+
+                    ClientChat nickClient = mClients.Where( e => e.Client == client).FirstOrDefault();
+                    string risp = $"{nickClient.Nickname}: {recvText}";
+
+                    InviaTutti(risp);
                 }
             }
             catch (Exception ex)
             {
+                RimuoviClient(client);
                 Console.WriteLine("Errore: " + ex.Message);
             }
         }
